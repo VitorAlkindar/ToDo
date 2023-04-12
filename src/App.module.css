@@ -1,0 +1,136 @@
+.wrapper {
+  max-width: 46rem;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+.ToDoForm {
+  display: flex;
+  position: absolute;
+  gap: 0.5rem;
+  top: 10.81rem;
+  left: calc(50% - 46rem / 2);
+}
+
+.wrapper .ToDoForm button {
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.1s;
+}
+
+.wrapper .ToDoForm button:hover {
+  background: var(--blue);
+}
+
+.tasksArea {
+  margin-top: 5rem;
+}
+
+.informationTaskCount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0px;
+}
+
+.createdTaskCount {
+  display: flex;
+  gap: 0.5rem;
+}
+.createdTaskCount > span {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.createdTaskCount > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--gray-400);
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.createdTaskCount > div > p {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 15px;
+  color: var(--gray-200);
+}
+
+.completedTasksCount {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.completedTasksCount > span {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.completedTasksCount > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--gray-400);
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.completedTasksCount > div > p {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 15px;
+  color: var(--gray-200);
+}
+
+.tasks {
+  border-top: 1px solid var(--gray-400);
+  border-radius: 8px;
+
+  margin: 1.5rem 0;
+}
+
+.createdTasksEmpty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1.5rem;
+}
+
+.createdTasksEmpty img {
+  margin-bottom: 1rem;
+}
+
+.createdTasksEmpty p {
+  color: var(--gray-300);
+  line-height: 140%;
+}
+
+.taskList {
+  margin-top: 2rem;
+}

@@ -1,0 +1,8 @@
+.inputText {
+  width: 39.875rem;
+  background: var(--gray-500);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-700);
+  color: var(--gray-100);
+}
