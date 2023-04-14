@@ -9,7 +9,6 @@ interface TaskProps {
   isDone: boolean;
   onDeleteTask: (id: string) => void;
   onTaskChange: (id: string, event: boolean) => void;
-  onTaskDoneCounter: () => void;
 }
 
 export function Task({
@@ -17,7 +16,6 @@ export function Task({
   text,
   isDone,
   onTaskChange,
-  onTaskDoneCounter,
   onDeleteTask,
 }: TaskProps) {
   function handleDeleteTask() {
@@ -26,7 +24,6 @@ export function Task({
 
   function handleTaskChange(event: ChangeEvent<HTMLInputElement>) {
     onTaskChange(id, event.target.checked);
-    onTaskDoneCounter();
   }
 
   return (

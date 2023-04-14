@@ -13,24 +13,11 @@ import { Task } from "./components/Task";
 
 function App() {
   const [newTaskText, setNewTaskText] = useState("");
-  const [newTaskId, setNewTaskId] = useState("");
-  const [newIsDoneValue, setNewIsDoneValue] = useState(false);
-  const [taskDoneCount, setTaskDoneCount] = useState(0);
 
   const [tasks, setTasks] = useState([
     {
       id: "1",
       text: "Estudar Node.js",
-      isDone: false,
-    },
-    {
-      id: "2",
-      text: "Lançar horas no Jira.",
-      isDone: false,
-    },
-    {
-      id: "3",
-      text: "Nova task",
       isDone: false,
     },
   ]);
@@ -74,20 +61,12 @@ function App() {
     setTasks(taskCompleted);
   }
 
-  function taskDoneCounter() {
-    const newValueTaskDoneCount = tasks.reduce((taskDoneCount, currentTask) => {
-      if (currentTask.isDone) {
-        return taskDoneCount + 1;
-      }
-      return taskDoneCount;
-    }, 1);
-
-    setTaskDoneCount(newValueTaskDoneCount);
-  }
-
-  console.log(tasks);
-
-  console.log(taskDoneCount);
+  const newValueTaskDoneCount = tasks.reduce((taskDoneCount, currentTask) => {
+    if (currentTask.isDone) {
+      return taskDoneCount + 1;
+    }
+    return taskDoneCount;
+  }, 0);
 
   return (
     <div>
@@ -113,9 +92,17 @@ function App() {
             </div>
             <div className={styles.completedTasksCount}>
               <span>Concluídas</span>
-              <div>
-                <p>0</p>
-              </div>
+              {newValueTaskDoneCount > 0 ? (
+                <div>
+                  <p>
+                    {newValueTaskDoneCount} de {tasks.length}
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <p>0</p>
+                </div>
+              )}
             </div>
           </div>
           <main className={styles.tasks}>
@@ -138,7 +125,6 @@ function App() {
                     isDone={task.isDone}
                     onDeleteTask={deleteTask}
                     onTaskChange={taskChange}
-                    onTaskDoneCounter={taskDoneCounter}
                   />
                 );
               })}
