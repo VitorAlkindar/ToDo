@@ -68,6 +68,7 @@ function App() {
     return taskDoneCount;
   }, 0);
 
+  const isNewTaskEmpty = newTaskText.length === 0;
   return (
     <div>
       <Header />
@@ -78,7 +79,7 @@ function App() {
           className={styles.ToDoForm}
         >
           <Input onNewTaskChange={newTaskChange} value={newTaskText} />
-          <button type="submit">
+          <button type="submit" disabled={isNewTaskEmpty}>
             Criar <PlusCircle size={20} />
           </button>
         </form>
